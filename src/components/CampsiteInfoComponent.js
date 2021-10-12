@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap';
 
 
-class CampsiteInfoComponent extends Component {
+class CampsiteInfo extends Component {
 
     renderCampsite(campsite){
         return (
@@ -44,21 +44,21 @@ class CampsiteInfoComponent extends Component {
     }
 
     render() {
-        if (this.props.campsite){
-        return( <div className = "row">
-            {this.renderCampsite(this.props.campsite)}
-            {this.renderComments(this.props.campsite.comments)}
-            </div>
-        )}
-            return(
-                <div>
-                Campsite not selected
+        if (this.props.campsite) {
+            return (
+                <div className="container">
+                    <div className="row">
+                        {this.renderCampsite(this.props.campsite)}
+                        {this.renderComments(this.props.campsite.comments)}
+                    </div>
                 </div>
             );
+        }
+        return <div />;
     }
 
 
 
 }
 
-export default CampsiteInfoComponent;
+export default CampsiteInfo;
